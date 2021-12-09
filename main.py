@@ -3,7 +3,7 @@ import schedule
 import time
 
 from src.newsletter import PyMail
-from src.newsletter import df_to_html_table, make_contents, preprocessing, merge_with_html_template, make_final_contents
+from src.newsletter import make_final_contents
 from config import Config
 
 # G메일 계정 정보 초기화
@@ -37,7 +37,9 @@ def send_mail_func():
     print("발송 완료")
 
 # 스케줄 등록
-schedule.every(1).minutes.do(send_mail_func)
+# schedule.every(1).minutes.do(send_mail_func)
+schedule.every().day.at("09:00").do(send_mail_func)
+schedule.every().day.at("18:00").do(send_mail_func)
 
 while True:
     schedule.run_pending()
