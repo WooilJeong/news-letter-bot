@@ -16,7 +16,6 @@ from bs4 import BeautifulSoup
 from pretty_html_table import build_table
 
 
-
 class PyMail:
     """
     Python Email 전송 클래스

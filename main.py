@@ -18,7 +18,7 @@ def send_mail_func():
     """
     컨텐츠 생성 및 이메일 발송 기능 호출 함수
     """
-    # 컨텐츠 생성 (sort 0: )
+    # 컨텐츠 생성 (sort -> 0: "관련도순", 1: "최신순", 2: "오래된순")
     contents = make_final_contents(search_word_list, sort=0)
     # 타이틀 및 컨텐츠 작성
     date_str = datetime.datetime.strftime(datetime.datetime.now(),'%Y년 %m월 %d일')
@@ -37,9 +37,9 @@ def send_mail_func():
     print("발송 완료")
 
 # 스케줄 등록
-# schedule.every(1).minutes.do(send_mail_func)
-schedule.every().day.at("09:00").do(send_mail_func)
-schedule.every().day.at("18:00").do(send_mail_func)
+schedule.every(5).minutes.do(send_mail_func)
+# schedule.every().day.at("09:00").do(send_mail_func)
+# schedule.every().day.at("18:00").do(send_mail_func)
 
 while True:
     schedule.run_pending()
