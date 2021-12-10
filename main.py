@@ -37,7 +37,7 @@ def send_mail_func():
     print("발송 완료")
 
 # 스케줄 등록
-schedule.every(5).minutes.do(send_mail_func)
+schedule.every(1).minutes.do(send_mail_func)
 # schedule.every().day.at("09:00").do(send_mail_func)
 # schedule.every().day.at("18:00").do(send_mail_func)
 
