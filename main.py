@@ -22,7 +22,7 @@ def send_mail_func():
     contents = make_final_contents(search_word_list, sort=0)
     # 타이틀 및 컨텐츠 작성
     date_str = datetime.datetime.strftime(datetime.datetime.now(),'%Y년 %m월 %d일')
-    title = f"""📢 정우일 키워드 뉴스레터 ({date_str})"""
+    title = f"""📢 키워드별 뉴스검색 결과 ({date_str})"""
     contents=f'''{contents}'''
     # # 첨부파일 경로 설정
     # attachment_path = f"D:/Task.txt"
